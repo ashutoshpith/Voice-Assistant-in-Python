@@ -7,13 +7,17 @@ from open_app import open_application
 from gtts import gTTS 
 import os 
 import Main as m
+import date_access as da
 
 def process_speak(text):
     # print(text)
     try: 
         if 'search' in text or 'play' in text: 
-            # a basic web crawler using selenium 
             wa.find_web(text) 
+            return
+            
+        elif 'todays date' in text or 'date' in text:
+            m.assistant_speaks(da.get_date())
             return
   
         elif "who are you" in text or "define yourself" in text: 
@@ -26,7 +30,7 @@ def process_speak(text):
             m.assistant_speaks(speak) 
             return
   
-        elif "ashutoshpith" in text:# just 
+        elif "ashutoshpith" in text:
             speak = """It's Your Website Sir"""
             m.assistant_speaks(speak) 
             return
@@ -45,9 +49,6 @@ def process_speak(text):
             return
   
         elif 'open' in text: 
-              
-            # another function to open  
-            # different application availaible 
             open_application(text.lower())  
             return
   
