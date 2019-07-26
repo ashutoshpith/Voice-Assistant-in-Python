@@ -6,8 +6,9 @@ import playsound
 from open_app import open_application
 from gtts import gTTS 
 import os 
-import Main as m
+import assistant_speaks as ass
 import date_access as da
+import get_audio as ga
 
 def process_speak(text):
     # print(text)
@@ -17,22 +18,22 @@ def process_speak(text):
             return
             
         elif 'todays date' in text or 'date' in text:
-            m.assistant_speaks(da.get_date())
+            ass.assistant_speaks(da.get_date())
             return
   
         elif "who are you" in text or "define yourself" in text: 
             speak = "Hello, I am Goku Sir" 
-            m.assistant_speaks(speak) 
+            ass.assistant_speaks(speak) 
             return
   
         elif "who made you" in text or "created you" in text: 
             speak = "You Sir Ashutosh."
-            m.assistant_speaks(speak) 
+            ass.assistant_speaks(speak) 
             return
   
         elif "ashutoshpith" in text:
             speak = """It's Your Website Sir"""
-            m.assistant_speaks(speak) 
+            ass.assistant_speaks(speak) 
             return
   
         elif "calculate" in text.lower(): 
@@ -45,7 +46,7 @@ def process_speak(text):
             query = text.split()[indx + 1:] 
             res = client.query(' '.join(query)) 
             answer = next(res.results).text 
-            m.assistant_speaks("The answer is " + answer) 
+            ass.assistant_speaks("The answer is " + answer) 
             return
   
         elif 'open' in text: 
@@ -54,15 +55,15 @@ def process_speak(text):
   
         else: 
   
-            m.assistant_speaks("I can search the web for you, Do you want to continue?") 
-            ans = m.get_audio() 
+            ass.assistant_speaks("I can search the web for you, Do you want to continue?") 
+            ans = ga.get_audio() 
             if 'yes' in str(ans) or 'yeah' in str(ans): 
                 wa.find_web(text) 
             else: 
                 return
     except : 
   
-        m.assistant_speaks("I don't understand, I can search the web for you, Do you want to continue?") 
-        ans = m.get_audio() 
+        ass.assistant_speaks("I don't understand, I can search the web for you, Do you want to continue?") 
+        ans = ga.get_audio() 
         if 'yes' in str(ans) or 'yeah' in str(ans): 
             wa.find_web(text) 
