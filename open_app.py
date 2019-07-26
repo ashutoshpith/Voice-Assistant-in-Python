@@ -10,17 +10,17 @@ def open_application(input):
   
     elif "firefox" in input or "mozilla" in input: 
         m.assistant_speaks("Opening Mozilla Firefox") 
-        os.startfile(r'C:\Program Files\Mozilla Firefox\\firefox.exe') 
+        os.startfile(r'C:\Program Files\Firefox Developer Edition\firefox.exe') 
         return
   
-    elif "word" in input: 
-        m.assistant_speaks("Opening Microsoft Word") 
-        os.startfile(r'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\\Word 2013.lnk') 
+    elif "code" in input: 
+        m.assistant_speaks("Opening Microsoft visual Code") 
+        os.startfile(r'C:\Users\ashut\AppData\Local\Programs\Microsoft VS Code\Code.exe') 
         return
   
-    elif "excel" in input: 
-        m.assistant_speaks("Opening Microsoft Excel") 
-        os.startfile(r'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\\Excel 2013.lnk') 
+    elif "hatch" in input: 
+        m.assistant_speaks("Opening Hatch File") 
+        os.startfile(r'H:') 
         return
   
     else: 
