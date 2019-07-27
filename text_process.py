@@ -1,6 +1,5 @@
 import web_access as wa
 import wolframalpha
-from selenium import webdriver
 import speech_recognition as sr 
 import playsound 
 from open_app import open_application
