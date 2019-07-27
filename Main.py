@@ -5,7 +5,7 @@ import assistant_speaks as ass
 import get_audio as ga
 
 def Main():
-	ass.assistant_speaks("Hello, Ashutosh This is Goku For You...") 
+	ass.assistant_speaks("Hello, Ashutosh This is Seja For You...") 
 	n ="Ashutosh"
 
 	ass.assistant_speaks("Today's date is "+da.get_date()) 
@@ -13,7 +13,7 @@ def Main():
 	while(1): 
 
 
-		ass.assistant_speaks("TELL me Sir What for today? Anything Special For me") 		
+		ass.assistant_speaks("Tell me What for today? Anything Special For me ...") 		
 		text = ga.get_audio()
 
 		if text == '': 

@@ -9,7 +9,7 @@ def assistant_speaks(output):
 	# num to rename every audio file 
 	# with different name to remove ambiguity 
 	num += 1
-	print("Goku : ", output) 
+	print("Seja : ", output) 
 
 	toSpeak = gTTS(text = output, lang ='en', slow = False) 
 	# saving the audio file given by google text to speech 
