@@ -4,11 +4,10 @@ import date_access as da
 import assistant_speaks as ass
 import get_audio as ga
 
-# Driver Code 
-if __name__ == "__main__": 
+def Main():
 	ass.assistant_speaks("Hello, Ashutosh This is Goku For You...") 
 	n ="Ashutosh"
-	# name = get_audio()
+
 	ass.assistant_speaks("Today's date is "+da.get_date()) 
 	
 	while(1): 
@@ -26,5 +25,10 @@ if __name__ == "__main__":
 
 		# calling process text to process the query 
 		tp.process_speak(text)
+    	
+    	
+if __name__ == "__main__":
+    	Main()
+	
 	
 		 
